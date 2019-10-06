@@ -1,0 +1,27 @@
+Arguments: 
+  /usr/bin/node /home/morpheus/.yarn/bin/yarn.js add create-react-app
+
+PATH: 
+  /home/morpheus/.yarn/bin:/home/morpheus/.config/yarn/global/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/morpheus/.dotnet/tools:/home/morpheus/Android/Sdk/tools:/home/morpheus/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  12.10.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
