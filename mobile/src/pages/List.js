@@ -7,8 +7,11 @@ import {
   Image,
   AsyncStorage,
   ScrollView,
-  TouchableOpacity
+  TouchableOpacity,
+  Alert
 } from "react-native";
+
+import socketio from "socket.io-client";
 
 import SpotList from "../components/SpotList";
 
@@ -16,6 +19,22 @@ import logo from "../assets/logo.png";
 
 const List = ({ navigation }) => {
   const [techs, setTechs] = useState([]);
+
+  useEffect(() => {
+    AsyncStorage.getItem("user").then(user_id => {
+      const socket = socketio("http://0.0.0.0:3030", {
+        query: { user_id }
+      });
+
+      socket.on("booking_response", booking => {
+        Alert.alert(
+          `Sua reserva em ${booking.spot.company} em ${booking.date} foi ${
+            booking.approved ? "APROVADA" : "REJEITADA"
+          }`
+        );
+      });
+    });
+  }, []);
 
   useEffect(() => {
     AsyncStorage.getItem("techs").then(techs => {
